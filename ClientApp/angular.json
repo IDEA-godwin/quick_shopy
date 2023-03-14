@@ -132,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "QuickShoppy"
+  "defaultProject": "QuickShoppy",
+  "cli": {
+    "analytics": "00db756b-f608-47a7-ab7b-2117d7f213de"
+  }
 }

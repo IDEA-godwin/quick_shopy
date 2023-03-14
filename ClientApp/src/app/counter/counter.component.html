@@ -4,4 +4,7 @@
 
 <p aria-live="polite">Current count: <strong>{{ currentCount }}</strong></p>
 
+<button class="btn btn-danger me-3" (click)="decrementCounter()">Decrement</button>
 <button class="btn btn-primary" (click)="incrementCounter()">Increment</button>
+
+<p aria-live="assertive" class="text-danger">{{ errMsg }}</p>
