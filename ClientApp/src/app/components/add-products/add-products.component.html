@@ -1,0 +1,29 @@
+
+<h1>Welcome To Your DashBoard</h1>
+<p>Manage your products on your favourite ecommerce platform</p>
+
+<div id="search-nav" class="d-flex align-items-center">
+    <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+    <input
+        type="text" class="form-control d-inline-block w-25 me-3"
+        [formControl]="search" placeholder="Search"
+    />
+    <button class="btn btn-outline-secondary">
+        Search
+    </button>
+    <button class="btn btn-outline-dark ms-auto">Add New Product</button>
+</div>
+
+<div id="content">
+    <div id="products" *ngIf="products.length; else empty"></div>
+</div>
+
+<ng-template #empty>
+    <div class="empty">
+        <h4 class="empty-text">No Product Added Yet</h4>
+        <div class="add-product p-1">
+            <a class="text-secondary text-decoration-none me-1">Add Product</a>
+            <i class="fa-sharp fa-solid fa-plus text-secondary"></i>
+        </div>
+    </div>
+</ng-template>
