@@ -14,7 +14,7 @@ export class ProductsService {
     private http: HttpClient,
     @Inject('BASE_URL') baseUrl: string
   ) {
-    this.baseUrl = baseUrl + "api/products/"
+    this.baseUrl = baseUrl + "api/Products"
   }
 
   getProducts(): Observable<Product[]> {

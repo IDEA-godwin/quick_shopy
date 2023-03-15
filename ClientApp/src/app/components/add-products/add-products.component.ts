@@ -13,6 +13,7 @@ export class AddProductsComponent {
   search: FormControl;
   productForm: FormGroup;
 
+  savingProduct = false;
   formErr = false;
   products: Product[] = [];
 
@@ -32,11 +33,14 @@ export class AddProductsComponent {
   }
 
   addNewProduct() {
+    this.savingProduct = true;
     if (!this.productForm.valid) {
       this.formErr = true;
     }
     this.productService.addProduct(this.buildProductPayload())
       .subscribe(result => {
+        this.productForm.reset();
+        this.savingProduct = false;
         console.log(result);
       });
   }
