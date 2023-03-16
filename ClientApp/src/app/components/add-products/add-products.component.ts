@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { IProduct, Product } from 'src/app/models/products';
 import { ProductsService } from 'src/app/services/products.service';
@@ -8,7 +8,7 @@ import { ProductsService } from 'src/app/services/products.service';
   templateUrl: './add-products.component.html',
   styleUrls: ['./add-products.component.css']
 })
-export class AddProductsComponent {
+export class AddProductsComponent implements OnInit {
 
   search: FormControl;
   productForm: FormGroup;
@@ -16,6 +16,7 @@ export class AddProductsComponent {
   savingProduct = false;
   formErr = false;
   products: Product[] = [];
+  loadingProducts = true;
 
   constructor(
     private productService: ProductsService,
@@ -29,6 +30,17 @@ export class AddProductsComponent {
       price: ["", Validators.required],
       itemCode: ["", Validators.required],
       quantityInStock: [1]
+    });
+  }
+
+  ngOnInit(): void {
+    this.getProducts();
+  }
+
+  getProducts() {
+    this.productService.getProducts().subscribe(result => {
+      this.products = result;
+      this.loadingProducts = false;
     });
   }
 
