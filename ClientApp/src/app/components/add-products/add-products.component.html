@@ -135,7 +135,7 @@
     </div>
 </div>
 
-<div id="content" *ngIf="!loadingProducts && products.length; else loading" class="content-body mt-4">
+<div id="content" *ngIf="!loadingProducts; else loading" class="content-body mt-4">
     <div
         id="products" *ngIf="products.length; else empty"
         class="row"
