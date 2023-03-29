@@ -38,10 +38,15 @@ export class AddProductsComponent implements OnInit {
   }
 
   getProducts() {
-    this.productService.getProducts().subscribe(result => {
-      this.products = result;
-      this.loadingProducts = false;
-    });
+    this.productService.getProducts().subscribe(
+      result => {
+        this.products = result;
+        this.loadingProducts = false;
+      },
+      error => {
+        this.loadingProducts = false;
+      }
+    );
   }
 
   addNewProduct() {

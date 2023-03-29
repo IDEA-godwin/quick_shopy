@@ -23,7 +23,7 @@ import { AddProductsComponent } from './components/add-products/add-products.com
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'dashboard', component: AddProductsComponent }
     ])
