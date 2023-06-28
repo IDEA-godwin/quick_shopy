@@ -107,11 +107,11 @@
                     <p
                         class="form-text text-danger"
                         *ngIf="
-                            (productForm.get('description')?.touched && !productForm.get('discription')?.valid)
+                            (productForm.get('description')?.touched && !productForm.get('description')?.valid)
                             || (!productForm.get('description')?.valid && formErr)
                         "
                     >
-                        An error text example
+                        Description max length exceeded
                     </p>
                 </div>
             </div>

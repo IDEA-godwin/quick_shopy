@@ -9,6 +9,8 @@ import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 import { HomeComponent } from './components/home/home.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { AddProductsComponent } from './components/add-products/add-products.component';
+import { CloudinaryModule } from '@cloudinary/ng';
+import { ProductImageUploadComponent } from './components/add-products/product-image-upload/product-image-upload.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,14 @@ import { AddProductsComponent } from './components/add-products/add-products.com
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    AddProductsComponent
+    AddProductsComponent,
+    ProductImageUploadComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     ReactiveFormsModule,
+    CloudinaryModule,
     RouterModule.forRoot([
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
